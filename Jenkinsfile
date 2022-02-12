@@ -1,3 +1,16 @@
 @Library('common_shared_blog_lib') _
 
-PipelineInsecure(build_stage: 'enabled', build_type: 'maven')
+pipeline {
+    agent {
+        kubernetes{
+            yaml libraryResource('maven-pod.yaml')
+        }
+    }
+    stages {
+        stage ("cleverness") {
+            script {
+                echo "I'm running a custom pipeline!"
+            }
+        }
+    }
+}
