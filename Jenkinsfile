@@ -8,8 +8,10 @@ pipeline {
     }
     stages {
         stage ("cleverness") {
-            script {
-                echo "I'm running a custom pipeline!"
+            steps {
+                script {
+                    echo "I'm running a custom pipeline!"
+                }
             }
         }
     }
