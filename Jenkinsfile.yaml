@@ -1,0 +1,3 @@
+build_stage: "enabled"
+build:
+    type: "maven"
